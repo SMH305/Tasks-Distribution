@@ -33,8 +33,8 @@ public class ReturnBook {
     public static void main(String[] args) {
         // random isbn  
         availableIsbns.add("1234567890");
-        availableIsbns.add("9876543210");
-        availableIsbns.add("5555555555");
+        availableIsbns.add("202105461");
+        availableIsbns.add("00110011");
 
         // random username and password 
         users.add(new User("samaa", "123456"));
