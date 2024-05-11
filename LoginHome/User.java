@@ -27,4 +27,8 @@ public class User {
     public void setBorrowedBooks(String borrowedBooks) {
         this.borrowedBooks = borrowedBooks;
     }
+
+    public void setPassword(String newPassword) {
+        this.password = newPassword;
+    }
 }
