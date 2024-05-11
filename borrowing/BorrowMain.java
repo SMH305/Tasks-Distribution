@@ -40,11 +40,11 @@ public class BorrowMain {
                 System.out.println("Borrow Receipt:");
                 displayReceipt(borrowedBook);
 
-                // Prompt for logout
-                System.out.print("Would you like to logout? (yes/no): ");
+                //For logout
+                System.out.print("To logout enter exit ");
                 String logoutChoice = scanner.nextLine();
 
-                if (logoutChoice.equalsIgnoreCase("yes")) {
+                if (logoutChoice.equalsIgnoreCase("exit")) {
                     System.out.println("Logging out. Goodbye, " + username + "!");
                     return; // Exit the program
                 }
