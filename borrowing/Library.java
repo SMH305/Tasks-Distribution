@@ -1,9 +1,8 @@
-
 package borrowing;
 
 import java.util.ArrayList;
 
-public class Library {
+class Library {
     private ArrayList<Book> books;
     private ArrayList<User> users;
 
@@ -18,19 +17,19 @@ public class Library {
     }
 
     // Borrow Book Method
-    public boolean borrowBook(String title, String borrower) {
+    public Book borrowBook(String title, String borrower) {
         for (Book book : books) {
             if (book.getTitle().equalsIgnoreCase(title)) {
                 if (book.isAvailable()) {
                     book.setAvailable(false);
                     book.setBorrower(borrower);
-                    return true;
+                    return book;
                 } else {
-                    return false; // Return False when the Book is not available in the library
+                    return null; // Return null when the Book is not available in the library
                 }
             }
         }
-        return false; // Book not found
+        return null; // Book not found
     }
 
     // Method for authenticating the user based on its username and password

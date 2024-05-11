@@ -1,5 +1,7 @@
 package borrowing;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Scanner;
 
 public class BorrowMain {
@@ -7,9 +9,9 @@ public class BorrowMain {
         Library library = new Library();
         // Data Layer (Adding Book and Users to the Online Library Management)
         // Adding books to the Online Library Management System
-        library.addBook(new Book("Software Engineering Project", "9783540626251"));
-        library.addBook(new Book("Data Analysis and Algorithms", "9782000183198"));
-        library.addBook(new Book("Database Management", "9787365716180"));
+        library.addBook(new Book("Software Engineering Project", "9783540626251", "John Doe"));
+        library.addBook(new Book("Data Analysis and Algorithms", "9782000183198", "Jane Smith"));
+        library.addBook(new Book("Database Management", "9787365716180", "Robert Johnson"));
 
         // Adding users to the Online Library Management System
         library.addUser(new User("Malak", "1234"));
@@ -32,13 +34,24 @@ public class BorrowMain {
             System.out.print("Enter the book title you want to borrow: ");
             String title = scanner.nextLine();
 
-            if (library.borrowBook(title, username)) {
+            Book borrowedBook = library.borrowBook(title, username);
+            if (borrowedBook != null) {
                 System.out.println("Book \"" + title + "\" borrowed successfully by " + username + ".");
+                System.out.println("Borrow Receipt:");
+                displayReceipt(borrowedBook);
             } else {
                 System.out.println("Book \"" + title + "\" is not available for borrowing.");
             }
         } else {
             System.out.println("Invalid Username or Password");
         }
+    }
+    //display receipt for the user after borrow book
+    private static void displayReceipt(Book book) {
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+        System.out.println("Title: " + book.getTitle());
+        System.out.println("ISBN: " + book.getISBN());
+        System.out.println("Author: " + book.getAuthor());
+        System.out.println("Borrow Date: " + dateFormat.format(new Date()));
     }
 }
