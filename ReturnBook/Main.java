@@ -54,10 +54,10 @@ public class Main {
             returnBook.returnBook(availableBooks);
 
             // Prompt for logout
-            System.out.print("Would you like to logout? (yes/no): ");
+            System.out.print("To logout enter exit: ");
             String logoutChoice = scanner.nextLine();
 
-            if (logoutChoice.equalsIgnoreCase("yes")) {
+            if (logoutChoice.equalsIgnoreCase("exit")) {
                 System.out.println("Logging out. Goodbye, " + loggedInUser.getUsername() + "!");
                 scanner.close();
                 return; // Exit the program
