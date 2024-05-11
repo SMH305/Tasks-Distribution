@@ -39,12 +39,23 @@ public class BorrowMain {
                 System.out.println("Book \"" + title + "\" borrowed successfully by " + username + ".");
                 System.out.println("Borrow Receipt:");
                 displayReceipt(borrowedBook);
+
+                // Prompt for logout
+                System.out.print("Would you like to logout? (yes/no): ");
+                String logoutChoice = scanner.nextLine();
+
+                if (logoutChoice.equalsIgnoreCase("yes")) {
+                    System.out.println("Logging out. Goodbye, " + username + "!");
+                    return; // Exit the program
+                }
             } else {
                 System.out.println("Book \"" + title + "\" is not available for borrowing.");
             }
         } else {
             System.out.println("Invalid Username or Password");
         }
+
+        scanner.close();
     }
     //display receipt for the user after borrow book
     private static void displayReceipt(Book book) {
