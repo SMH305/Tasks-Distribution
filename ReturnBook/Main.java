@@ -18,35 +18,54 @@ public class Main {
         users.add(new User("malak", "123456"));
 
         Scanner scanner = new Scanner(System.in);
-        
+
         System.out.println("Welcome to the Online Library Management System");
         System.out.println();
-        System.out.print("Enter your username: ");
+        System.out.print("Enter your username (or 'exit' to quit): ");
         String username = scanner.nextLine();
+
+        if (username.equalsIgnoreCase("exit")) {
+            System.out.println("Goodbye!");
+            scanner.close();
+            return; // Exit the program
+        }
 
         System.out.print("Enter your password: ");
         String password = scanner.nextLine();
 
         boolean isLoggedIn = false;
+        User loggedInUser = null;
+
         for (User user : users) {
             if (user.getUsername().equals(username) && user.getPassword().equals(password)) {
                 isLoggedIn = true;
+                loggedInUser = user;
                 break;
             }
         }
 
         if (isLoggedIn) {
-            System.out.print("Enter the ISBN of the book: ");
+            System.out.println("Login successful. Welcome, " + loggedInUser.getUsername() + "!");
+
+            System.out.print("Enter the ISBN of the book you want to return: ");
             String isbn = scanner.nextLine();
 
             ReturnBook returnBook = new ReturnBook(isbn);
             returnBook.returnBook(availableBooks);
+
+            // Prompt for logout
+            System.out.print("Would you like to logout? (yes/no): ");
+            String logoutChoice = scanner.nextLine();
+
+            if (logoutChoice.equalsIgnoreCase("yes")) {
+                System.out.println("Logging out. Goodbye, " + loggedInUser.getUsername() + "!");
+                scanner.close();
+                return; // Exit the program
+            }
         } else {
             System.out.println("Invalid username or password.");
         }
 
         scanner.close();
-
-        
     }
 }
