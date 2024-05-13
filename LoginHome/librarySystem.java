@@ -1,3 +1,9 @@
+/*I think you should add a signup feaure to the login main class that will allow new users to sign up.
+Create a menu containing the following options for users:
+signup, login, and exit.
+Signed by: Malak Almari
+Date: 13//5/2024
+ */
 package LoginHome;
 import java.util.*;
 public class librarySystem {
