@@ -1,3 +1,8 @@
+/*You can add borrow receipt to give the user more information about the book that he had borrow 
+ * signed by : Samaa Atta 
+ * Date: 13/05/2024
+  */
+
 package borrowing;
 
 import java.util.Scanner;
