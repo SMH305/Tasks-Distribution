@@ -2,7 +2,7 @@ package borrowing;
 
 import java.util.ArrayList;
 
-class Library {
+public class Library {
     private ArrayList<Book> books;
     private ArrayList<User> users;
 
@@ -17,19 +17,19 @@ class Library {
     }
 
     // Borrow Book Method
-    public Book borrowBook(String title, String borrower) {
+    public boolean borrowBook(String title, String borrower) {
         for (Book book : books) {
             if (book.getTitle().equalsIgnoreCase(title)) {
                 if (book.isAvailable()) {
                     book.setAvailable(false);
                     book.setBorrower(borrower);
-                    return book;
+                    return true;
                 } else {
-                    return null; // Return null when the Book is not available in the library
+                    return false; // Return False when the Book is not available in the library
                 }
             }
         }
-        return null; // Book not found
+        return false; // Book not found
     }
 
     // Method for authenticating the user based on its username and password
