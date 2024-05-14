@@ -12,20 +12,17 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         List<Book> availableBooks = new ArrayList<>();
-         // Add the values of the new attributes "title" and "author" (updated aftar review)
-         availableBooks.add(new Book("1234567890", "Software Engineering Project", "Ian Sommerville"));
-         availableBooks.add(new Book("202105461", "Database Management", "Hector Garcia"));
-         availableBooks.add(new Book("00110011", "Analysis and Design of Algorithms", "Rajesh K. Shukla"));
+        availableBooks.add(new Book("1234567890"));
+        availableBooks.add(new Book("202105461"));
+        availableBooks.add(new Book("00110011"));
 
-   
         List<User> users = new ArrayList<>();
         users.add(new User("samaa", "123456"));
         users.add(new User("hala", "123456"));
         users.add(new User("malak", "123456"));
 
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Welcome to the Online Library Management System");
-        System.out.println();
+
         System.out.print("Enter your username: ");
         String username = scanner.nextLine();
 
