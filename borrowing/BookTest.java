@@ -1,3 +1,4 @@
+
 package borrowing;
 import org.junit.*;
 
@@ -7,22 +8,19 @@ public class BookTest {
 
     @Test
     // Here it will test the book constructor and check if the book attributes are intialized correctly
-    // Add the author attribute value and assertEquals for it "Added After Review"
     public void testBookConstructor() {
-        Book book = new Book("DataBase Management", "9782000183198","Robert Johnson");
+        Book book = new Book("DataBase Management", "9782000183198");
 
         assertEquals("DataBase Management", book.getTitle());
         assertEquals("9782000183198", book.getISBN());
-        assertEquals("Robert Johnson", book.getAuthor());
         assertTrue(book.isAvailable());
         assertNull(book.getBorrower());
     }
 
     @Test
     // Here it will test setAvailable method in the Book class (set the book as available and unavailable)
-     // Add the author attribute value and assertEquals for it "Added After Review"
     public void testSetAvailable() {
-        Book book = new Book("Software Engineering Project", "9783540626251","John Doe");
+        Book book = new Book("Software Engineering Project", "9783540626251");
 
         book.setAvailable(false);
         assertFalse(book.isAvailable());
@@ -33,10 +31,8 @@ public class BookTest {
 
     @Test
     // Here it will test setBorrower method in Book class
-    // Add the author attribute value and assertEquals for it "Added After Review"
-
     public void testSetBorrower() {
-        Book book = new Book("Data Analysis and Algorithms", "9782000183198","Jane Smith");
+        Book book = new Book("Data Analysis and Algorithms", "9782000183198");
 
         book.setBorrower("Samaa");
         assertEquals("Samaa", book.getBorrower());
