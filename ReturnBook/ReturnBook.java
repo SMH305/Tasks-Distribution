@@ -18,25 +18,16 @@ public class ReturnBook {
     }
 
     public void returnBook(List<Book> availableBooks) {
-        Book returnedBook = null;
+        boolean bookFound = false;
         for (Book book : availableBooks) {
             if (book.getIsbn().equals(isbn)) {
-                returnedBook = book;
+                bookFound = true;
                 break;
             }
         }
 
-        if (returnedBook != null) {
-
-            // Generate the return receipt if the book returned successfully (updated aftar review)
-            String receipt =
-                    "Title: " + returnedBook.getTitle() + "\n"
-                    + "Author: " + returnedBook.getAuthor() + "\n"
-                    + "ISBN: " + returnedBook.getIsbn() + "\n"
-                    +"Short Description: " + returnedBook.getTitle() + " Book has been returned successfully." ;
-
-            System.out.println("Book with ISBN " + isbn + " has been returned." + "\n");
-            System.out.println("Return Receipt:\n" + receipt);
+        if (bookFound) {
+            System.out.println("Book with ISBN " + isbn + " has been returned.");
         } else {
             System.out.println("Book with ISBN " + isbn + " is not available.");
         }
