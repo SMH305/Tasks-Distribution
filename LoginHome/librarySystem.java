@@ -21,7 +21,10 @@ public class librarySystem {
         users.addAll(Arrays.asList(predefinedUsers));
         
         Scanner scanner = new Scanner(System.in);
-        // Add a menu so that the user will choose to Sign Up, Login, or Exit
+
+        //Added updated part (signup and menu of options) that were suggested by Malak.
+
+        // Add a menu so that the user will choose to Sign Up, Login, or Exit.
         int choice;
         do {
             System.out.println("Welcome to the Online Library Management System");
